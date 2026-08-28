@@ -53,6 +53,8 @@ Summary:
 
 ## General counts
 
+There can be a customizable config in terms of categorical names, or set habits that folks would want to maintain.
+
 ## Mood and Epic chooser
 
 ## Lists
