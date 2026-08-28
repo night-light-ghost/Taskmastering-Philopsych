@@ -18,9 +18,9 @@ Below the general count, which serves as an overall summary, we can have a set o
 Summary:
 
 * No active tasks - "Fast Track" (Quick Ticks?)
-* * I could have it not list any particular tasks as "active"
-* * Maybe default prioritization is the fastest/smallest tasks available
-* * Or, alternatively, have a "tasks grinding" section to make smaller, and more divisible tasks
+** I could have it not list any particular tasks as "active"
+** Maybe default prioritization is the fastest/smallest tasks available
+** Or, alternatively, have a "tasks grinding" section to make smaller, and more divisible tasks
 * Epic level divisions
 * * How about Learning, Dreaming, Administrating, Careering, Moonlighting, Estating, Recharging
 * * Each one can have their own backlog 
