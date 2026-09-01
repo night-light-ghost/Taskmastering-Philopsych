@@ -226,3 +226,4 @@ More just listing an unknown here, but expressing a desire. Not fully sure what 
     * Does he have a name? What Andy Watson & Cole de Mole considered your excited puppy mind
   * Your "spooky side" and how she provides courage
 
+Getting this into a config would be a better idea. See how much of the dashboard idea can be modular, and also not need to set in stone what the various settings are, like categories of tasks, your rating faces, status, and satisfaction. Those can be default, but anyone who wants to customize the system can create their own settings there. Yours should just be fun because that's what you want to be there. Remember that. This is all an example of love to yourself.
