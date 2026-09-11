@@ -1,3 +1,45 @@
+# Statistics will be displayed upon the dashoboard as a quick single-pane of glass summary of what is happening
+# We will have our base list here as a reference for what we want to setup, pull in, and calculate later
+stats = ["Total number of tasks",
+  "percent in each status category",
+  "Stopwatch since last update",
+  "Timer until next update"
+  "Number of consecutive days with(out) uploads",
+  "Number of tasks uploaded today",
+  "Number of tasks completed today",
+  "Time until next task expiration date"
+]
+
+# Mood Chooser can be added in as a way to prioritize what needs doing. A user can have presets that affect which potential tasks are displayed
+# We can have a punchcard like optional entry where someone enters numbers only in the fields that matter to them in the moment, and then it chooses a task to prioritize
+moods = ["Healthy",
+  "Tired",
+  "Frustrated", 
+  "Disappointed", 
+  "Eager", 
+  "Anxiety", 
+  "Batteries", 
+  "Curious", 
+  "Sightedness", 
+  "Floatiness"
+]
+
+# An epicChooser will similarly come into effect passively when other automatic fields can be taken into account
+# Thoughts being to make it easier to choose tasks that are easier for some reason, including:
+epicChooser = ["Time of Day",
+  "Work Schedule",
+  "Weekday",
+  "Date",
+  "Warming up",
+  "Winding down"
+]
+
+# Optional lists to be defined at startup before sorting through others. These to be there mainly for speed, when we don't have too much time, but can do an easy win, or discover newly unlocked tasks
+lists = ["Quick Ticks",
+  "Tasks to be ground down",
+  "Newly unlocked tasks that were prviously blocked"
+]
+# TODO: Criteria to generate each of the above list categories
 
 # Epics will be representations of the categories that we split up tasks within
 # Each can have their own backlog of tasks, as well as with Habits or Hobbies relating back to them
@@ -7,7 +49,7 @@ epics = ["Learning",
   "Careering",
   "Moonlighting",
   "Estating",
-"Recharging"
+  "Recharging"
 ]
 # TODO: deciding on epic object criteria, which really would be tasks, backlog, and dashboard structure
 
@@ -63,8 +105,50 @@ freindos = {
   "memeSubjects": ""
 }
 
-# Dashboard needs defining of the following:
-## General counts
-## Mood and Epic chooser
-## Lists (with described prposes and what is to be found there
-## Quick Ticks
+# Task Categories are to serve as all the fields of what a task would ideally be considering as data
+# These will be stored elsewhere, but here the titles are to be used as category headers, databaseStyle
+taskData = [
+  "Name",
+  "Description",
+  "Epic",
+  "Expiration Date",
+  "Stakes",
+  "Prerequisites",
+  "Relative Difficulty",
+  "Satisfaction",
+  "Status",
+  "Time and Date",
+  "ID"
+]
+
+# Relative Difficulty is to be defined by the user, we'll have emoticons here as what I find amusing
+# Feel free to change them into other aspects, changing the titles for each one here should dynamically affect the system
+relativeDifficulty = [":-P",
+  ":-)",
+  ":-|",
+  ">:-/",
+  "B-0",
+  "8-@",
+  "%-#"
+]
+
+# Satisfaction should also be up for the user to define, as we all get different levels from completion
+# Rather than just feeling good, this category is more to define how many times one can reap rewards from the completed tasks
+satisfaction = ["Once",
+  "Countably Finite",
+  "Verrazano",
+  "Memory",
+  "Rebounding"
+]
+
+# Status of a task is to be a criterion for seeing how far along we are with something, or if it is relative to something else, and what may be affected therewith
+# Default values, like in other categories, are definitions, references, or inside jokes (with myself)
+status = ["Let's go!",
+  "It's happening!",
+  "Yah-Tah!",
+  "Awating",
+  "Sedimentary",
+  "Incomplete",
+  "Deprecated"
+]
+

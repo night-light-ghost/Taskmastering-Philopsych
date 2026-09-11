@@ -9,7 +9,7 @@ think like "re-rolling item stats" that you can just hop in and do
 A dashboard that lists out the current backlog.
 
 
-We want a site to view the current task lists. While a live site would be awesome, we can start with a compiled and generated site active when turned on. There should a few general counts: numbers of tasks created, percent in each status category (which can possibly link to said list of tasks), stopwatch since last update, timer until next update, number of consecutive days without uploads, number of tasks uploaded today, number of consecutive days with uploads, numer of tasks completed today, and time until next task expiration date. 
+We want a site to view the current task lists. While a live site would be awesome, we can start with a compiled and generated site active when turned on. There should be a few general counts: numbers of tasks created, percent in each status category (which can possibly link to said list of tasks), stopwatch since last update, timer until next update, number of consecutive days without uploads, number of tasks uploaded today, number of consecutive days with uploads, numer of tasks completed today, and time until next task expiration date. 
 
 Before we get to lists, we can have a mood or epic chooser. I'm thinking I can have a current mood modifier that reflects how capable I'm feeling in the moment. It could include things like relative healthiness, tiredness, frustrations, disappointment, eagerness, anxieties, batteries, closure, sightedness, and floatiness. Maybe weighing them out on a scale, determining if there are any tasks listed that should be prioritised. Secondly, an epic chooser can passively include things like reflecting time of day, work schedule, weekday (sunday scaries), date, and time (warming up and winding down). Actively we can change it according to what we'd want accomplished in the moment. Toggling options such as where we are, vacation vs workday (weekends count as vacation).
 
@@ -195,6 +195,10 @@ Breakdown of terms:
 
 # Python coding to do
 
+## Dashboard
+
+We want the dashboard to load in a lot from the saved data files, and know how to organize it into viewable content on the screen. That's going to be some interesting python coding in of itself! Hopefully we can use Dash and/or PANDAS to that end, with a helpful dynmic entry to begin with. Your Config.py file for now is python objects, for example, but you could have a csv or json in of itself that is the basic config. Maybe you want to see how PostGreSQL does it, and copy that idea. They are a pretty successful system that exists and has been used by and for many people for a long ass time!
+
 ## Uploader
 
 This will be the code that uploads the current task list into a database, flushing out the list's contents. Ideally this could be set off, though would also happen automatically at end of day. A summary of what tasks are added could be sent to me, even and especially if it was empty. If empty for several days, a count of how many days should be listed. Also this could add an id field for tasks when adding them to the database.
@@ -213,7 +217,7 @@ I don't think a command line task editor will be needed. We can just edit csv fi
 
 ## Data trends
 
-More just listing an unknown here, but expressing a desire. Not fully sure what I'll get from the data science book, but hoping that something comes up as a result of reading it that we can learn from analyzing the data trends
+More just listing an unknown here, so as to expressing a desire. Not fully sure what I'll get from the data science book, but hoping that something comes up as a result of reading it that we can learn from analyzing the data trends
 
 
 # Absent minded findings?
