@@ -1,3 +1,7 @@
+from enum import Enum
+import datetime
+
+
 # Statistics will be displayed upon the dashoboard as a quick single-pane of glass summary of what is happening
 # We will have our base list here as a reference for what we want to setup, pull in, and calculate later
 stats = ["Total number of tasks",
@@ -43,14 +47,22 @@ lists = ["Quick Ticks",
 
 # Epics will be representations of the categories that we split up tasks within
 # Each can have their own backlog of tasks, as well as with Habits or Hobbies relating back to them
-epics = ["Learning",
-  "Dreaming",
-  "Administrating",
-  "Careering",
-  "Moonlighting",
-  "Estating",
-  "Recharging"
+epics = {
+  "name": "",
+  "examples": [],
+  "tagNum": 0
+}
+
+epicList = [
+  ("Learning", ["Acquiring new skills", "Practicing old ones","Retrospecting"],0),
+  ("Dreaming",["Project management", "Planning for the future", "Reminding yourself of your why"],1),
+  ("Administrating", ["Signing documents","Going to appointments", "Weighing the options of decisions"],2),
+  ("Careering", ["Making moves in your career path", "Getting work tasks done", "Networking with people"],3),
+  ("Moonlighting", ["Getting side-projects done", "Respecting the hustle", "Hobbies and Habits"],4),
+  ("Estating", ["Porkchop sandwiches", "Maintenance", "Chores"],5),
+  ("Recharging", ["Following pleasurable pursuits", "Active Rest", "Hanging out with people"],6)
 ]
+
 # TODO: deciding on epic object criteria, which really would be tasks, backlog, and dashboard structure
 
 
@@ -83,12 +95,12 @@ oldFriends = {
   "history": "",
   "address": "",
   "encounters": [
-    "what": "",
+    {"what": "",
     "where": "",
     "when": "",
     "why": "",
     "whoelse": [""],
-    "Followup": ""
+    "Followup": ""}
   ]
 # TODO: friend dashboard to show who you haven't reached out to in a while
 #       notifications to notify folks and send good vibes
@@ -107,48 +119,69 @@ freindos = {
 
 # Task Categories are to serve as all the fields of what a task would ideally be considering as data
 # These will be stored elsewhere, but here the titles are to be used as category headers, databaseStyle
-taskData = [
-  "Name",
-  "Description",
-  "Epic",
-  "Expiration Date",
-  "Stakes",
-  "Prerequisites",
-  "Relative Difficulty",
-  "Satisfaction",
-  "Status",
-  "Time and Date",
-  "ID"
-]
+taskData = {
+  "name": "",
+  "description": "",
+  "epic": {},
+  "expirationDate": datetime,
+  "stakes": "",
+  "prerequisites": "",
+  "relative Difficulty": {},
+  "satisfaction": {},
+  "status": {},
+  "time and Date": datetime,
+  "iD": 0
+}
 
 # Relative Difficulty is to be defined by the user, we'll have emoticons here as what I find amusing
 # Feel free to change them into other aspects, changing the titles for each one here should dynamically affect the system
-relativeDifficulty = [":-P",
-  ":-)",
-  ":-|",
-  ">:-/",
-  "B-0",
-  "8-@",
-  "%-#"
+relativeDifficulty = {
+  "icon": "",
+  "description": "",
+  "tagNum": 0
+}
+
+relDiffList = [
+  (":-P","Stupid easy, no harder than sticking one's tongue out",0),
+  (":-)","Easy to get done, can be done at most times",1),
+  (":-|","Bartleby (Remember that laziness is the opponent)",2),
+  (">:-/","Might need a little grit, furrow your brow!",3),
+  ("B-0","Just start to sing, as you tackle the thing, that cannot be done, and you'll do it",4),
+  ("8-@","That's a big boiiiii!!!!11 You're not getting this done in one go, but you can take a bite out of it",5),
+  ("%-#","This should be broken up into parts, task is really a spike that needs further understanding",6)
 ]
 
 # Satisfaction should also be up for the user to define, as we all get different levels from completion
 # Rather than just feeling good, this category is more to define how many times one can reap rewards from the completed tasks
-satisfaction = ["Once",
-  "Countably Finite",
-  "Verrazano",
-  "Memory",
-  "Rebounding"
+satisfaction = {
+  "name": "",
+  "description": "",
+  "tagNum": 0
+}
+
+satisfactionList = [
+("Once","Do the thing, and it's good for now",0),
+("Countably finite","The task, once done, will give a few returns",1),
+("Verrazano","The task is finite, but increments of its consumption are uncountable, as in you don't see the other side of the horizon when setting out upon it",2),
+("Memory","The task keeps on giving whenever you remember it, or having done it",3),
+("Rebounding","The everflowing chalice, a lotus with infinite petals",4)
 ]
+
 
 # Status of a task is to be a criterion for seeing how far along we are with something, or if it is relative to something else, and what may be affected therewith
 # Default values, like in other categories, are definitions, references, or inside jokes (with myself)
-status = ["Let's go!",
-  "It's happening!",
-  "Yah-Tah!",
-  "Awating",
-  "Sedimentary",
-  "Incomplete",
-  "Deprecated"
-]
+status = {
+  "name": "",
+  "description": "",
+  "tagNum": 0
+}
 
+statusList = [
+("Let's go!","This task can be picked up at any time",0),
+("It's happening!","Task was started, but is not yet finished",1),
+("Yah-Tah!","Yay! You did it!",2),
+("Awating","Something else needs to happen first, see pre-reqs",3),
+("Sedimentary","Needs breaking down into smaller parts",4),
+( "Incomplete","Task is missing one or more of its classifiers",5),
+( "Deprecated","Doesn't really need to be done anymore, we've got something better!",6)
+]
